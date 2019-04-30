@@ -5,7 +5,7 @@
 The Namecoin developers who have digitally signed this file [1] state the following:
 
 1. The date of issue of this canary is _____  __, ____.
-2. No warrants, subpoenas, national security letters, or government-issued gag orders have ever been served to us with regard to Namecoin (e.g. to hand out the private signing keys or to introduce backdoors), except as described in the "List of incidents" below.
+2. No warrants, subpoenas, national security letters, or government-issued gag orders have ever been served to us with regard to Namecoin (e.g. to hand out the private signing keys or to introduce backdoors), except as described in the "List of incidents" below, and in the "List of incidents" from previous-numbered canaries.
 3. We plan to publish the next of these canary statements in the first two weeks of _____ ____. Special note should be taken if no new canary is published by that time or if the list of statements changes without plausible explanation.
 
 ## Special announcements
@@ -48,7 +48,7 @@ ___
 $ ~/.local/bin/rsstail --iterations 1 --initial 5 --format '{title}\n' --url https://www.rt.com/rss/news/
 ___
 
-$ curl -s 'https://blockchainbdgpzk.onion/blocks/?format=json' | python3 -c 'import sys, json; print(json.load(sys.stdin)['\''blocks'\''][10]['\''hash'\''])'
+$ curl -s 'https://blockchain.info/blocks/?format=json' | python3 -c 'import sys, json; print(json.load(sys.stdin)['\''blocks'\''][10]['\''hash'\''])'
 ___
 ~~~
 
