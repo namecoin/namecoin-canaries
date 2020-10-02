@@ -27,28 +27,26 @@ This declaration is merely a best effort and is provided without any guarantee o
 ## Proof of freshness
 
 ~~~
-$ sudo apt-get install python3-pip
-...
-
-$ pip3 install --user rsstail
+$ sudo apt install rsstail
 ...
 
 $ date -R -u
 ___
 
-$ ~/.local/bin/rsstail --iterations 1 --initial 5 --format '{title}\n' --url https://www.spiegel.de/international/index.rss
+$ torsocks rsstail -1 -n 5 -u https://www.spiegel.de/international/index.rss
 ___
 
-$ ~/.local/bin/rsstail --iterations 1 --initial 5 --format '{title}\n' --url https://rss.nytimes.com/services/xml/rss/nyt/World.xml
+$ torsocks rsstail -1 -n 5 -u https://rss.nytimes.com/services/xml/rss/nyt/World.xml
 ___
 
-$ ~/.local/bin/rsstail --iterations 1 --initial 5 --format '{title}\n' --url https://feeds.bbci.co.uk/news/world/rss.xml
+$ torsocks rsstail -1 -n 5 -u https://feeds.bbci.co.uk/news/world/rss.xml
 ___
 
-$ ~/.local/bin/rsstail --iterations 1 --initial 5 --format '{title}\n' --url https://www.rt.com/rss/news/
+$ torsocks rsstail -1 -n 5 -u https://www.rt.com/rss/news/
 ___
 
-$ curl -s 'https://blockchain.info/blocks/?format=json' | python3 -c 'import sys, json; print(json.load(sys.stdin)['\''blocks'\''][10]['\''hash'\''])'
+$ curl -s 'https://blockchain.info/blocks/?format=json' \
+| python3 -c 'import sys, json; print(json.load(sys.stdin)['\''blocks'\''][10]['\''hash'\''])'
 ___
 ~~~
 
